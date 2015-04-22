@@ -1,0 +1,30 @@
+- if @event.errors.any?
+  %ul.errors
+    - @event.errors.each do |field, errors|
+      - Array.wrap(errors).each do |error|
+        %li #{field} #{error}
+
+.form-group
+  = f.label :starts_at, 'Date'
+  = f.text_field :starts_at, placeholder: "YYYY-MM-DD", class: 'form-control'
+
+.form-group
+  = f.label :team
+  = f.select :team, options_for_select(Event::TEAMS), {}, { class: 'form-control' }
+
+.form-group
+  = f.label :description
+  = f.text_field :description, class: 'form-control'
+
+.form-group
+  = f.label :description_link
+  = f.text_field :description_link, class: 'form-control'
+
+.form-group
+  = f.label :metrics_impact
+  = f.text_field :metrics_impact, class: 'form-control'
+
+.form-group
+  = f.label :results
+  = f.text_field :results, class: 'form-control'
+

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  starts_at: 2015-04-22 13:19:17
+  team: MyString
+  description: MyString
+  metrics_impact: MyString
+  results: MyString
+
+two:
+  starts_at: 2015-04-22 13:19:17
+  team: MyString
+  description: MyString
+  metrics_impact: MyString
+  results: MyString
