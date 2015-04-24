@@ -7,7 +7,12 @@
     = csrf_meta_tags
     = stylesheet_link_tag 'application'
   %body(bgcolor="#f6f8f1")
-    = yield
+    .container
+      = render 'nav'
+
+      %hr
+
+      = yield
     = javascript_include_tag 'application'
 
     = content_for(:footer) if content_for?(:footer)

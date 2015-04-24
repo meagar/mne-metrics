@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get '/heartbeat' => 'heartbeat#index'
 
-  resources :news_letters, only: %w(index create)
+  resources :news_letters, only: %w(index show create)
 
   root to: 'events#index'
   resources :events

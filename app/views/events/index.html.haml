@@ -1,44 +1,29 @@
-
-.container
-  = render 'nav'
-
-  %hr
-
-  .row
-    .col-md-4
-      Date:
-      - if @date == 'all'
-        All Dates
-        |
-        = link_to '4 Week Window', weekly_window_path
-      - else
-        = link_to 'All Dates', all_dates_path
-        |
-        4 Week Window
-      
-    .col-md-8
-      Team:
-      - if @team == 'all'
-        All Teams
-      - else
-        = link_to 'All Teams', '/'
+.row
+  .col-md-4
+    Date:
+    - if @date == 'all'
+      All Dates
       |
-      - Event::TEAMS.each do |name,value|
-        - if @team == value
-          = name
-        - else
-          %a(href="/#{value}?date=#{@date}")= name
-        |
+      = link_to '4 Week Window', weekly_window_path
+    - else
+      = link_to 'All Dates', all_dates_path
+      |
+      4 Week Window
+    
+  .col-md-8
+    Team:
+    - if @team == 'all'
+      All Teams
+    - else
+      = link_to 'All Teams', '/'
+    |
+    - Event::TEAMS.each do |name,value|
+      - if @team == value
+        = name
+      - else
+        %a(href="/#{value}?date=#{@date}")= name
+      |
 
-  %hr
+%hr
 
-  %table.table.table-striped.table-condensed.table-hover
-    %thead
-      %tr
-        %th(width="90") Date
-        %th Team
-        %th Description
-        %th Expected Metrics Impact
-        %th Results
-    %tbody
-      = render(@events) || render('empty')
+= render 'table', events: @events

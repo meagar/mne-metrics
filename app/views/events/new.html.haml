@@ -1,24 +1,11 @@
-.container
-  = render 'nav'
+%h2 Add Event
 
-  %h2 Add Event
+= form_for @event do |f|
+  = render 'form', f: f
+  %button.btn.btn-default(type="submit") Submit
 
-  = form_for @event do |f|
-    = render 'form', f: f
-    %button.btn.btn-default(type="submit") Submit
+%hr
 
-  %hr
+%h2 Your Events
 
-  %h2 Your Events
-
-  %table.table.table-striped.table-condensed.table-hover
-    %thead
-      %tr
-        %th(width='90') Date
-        %th Team
-        %th Description
-        %th Expected Metrics Impact
-        %th Results
-        %th(width='90') Edit
-
-    = render @events, edit: true
+= render 'table', events: @events, edit: true

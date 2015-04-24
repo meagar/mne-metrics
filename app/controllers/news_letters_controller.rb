@@ -5,6 +5,11 @@ class NewsLettersController < ApplicationController
     @news_letters = NewsLetter.order('id desc').all
   end
 
+  def show
+    @news_letter = NewsLetter.find(params[:id])
+    render layout: false
+  end
+
   def create
     @news_letter = NewsLetter.new
     @news_letter.send!
@@ -13,4 +18,3 @@ class NewsLettersController < ApplicationController
   end
 
 end
-

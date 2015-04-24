@@ -1,16 +1,10 @@
+table.table.table-striped.table-condensed.table-hover
+  thead
+    tr
+      th width="90" Sent On
+  tbody
+    = render(@news_letters) || render('empty')
 
-.container
-  = render 'nav'
-
-  hr
-
-  table.table.table-striped.table-condensed.table-hover
-    thead
-      tr
-        th width="90" Sent On
-    tbody
-      = render(@news_letters) || render('empty')
-
-  .row
-    = link_to news_letters_path, method: 'post', class: 'btn btn-primary btn-large' do
-      | Send now!
+.row
+  = link_to news_letters_path, method: 'post', class: 'btn btn-primary btn-large' do
+    | Send now!
