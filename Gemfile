@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'haml'
+gem 'slim'
 gem 'rails_12factor', group: :production
 gem 'pry'
 

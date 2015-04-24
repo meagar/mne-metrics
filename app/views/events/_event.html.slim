@@ -1,18 +1,18 @@
-%tr
-  %th(scope="row")= event.starts_at.to_date
-  %td= team_name event.team
-  %td
+tr
+  th scope="row" = event.starts_at.to_date
+  td = team_name event.team
+  td
     - if event.description_link.present?
       = link_to event.description, event.description_link
     - else
       = event.description
 
-  %td= event.metrics_impact
-  %td= event.results
+  td= event.metrics_impact
+  td= event.results
   - if defined?(edit) && edit
-    %td
+    td
       = link_to 'Edit', [:edit, event]
-      \/
+      |  / 
       = link_to 'Delete', event, method: 'delete', 'data-confirm' => 'Are you sure?'
       
 

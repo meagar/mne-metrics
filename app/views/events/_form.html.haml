@@ -28,3 +28,10 @@
   = f.label :results
   = f.text_field :results, class: 'form-control'
 
+- content_for :footer do
+  :javascript
+    $(function () {
+      $('#event_starts_at').datepicker({
+        dateFormat: 'yy-mm-dd'
+      })
+    });

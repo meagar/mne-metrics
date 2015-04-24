@@ -4,13 +4,13 @@ class EventsController < ApplicationController
   before_filter :find_event, only: %w(edit update delete)
 
   def root
-    @events = Event.order(:starts_at)
+    @events = Event.order('starts_at desc')
     @events = @events.limit(10)
     apply_filters
   end
 
   def index
-    @events = Event.order(:starts_at)
+    @events = Event.order('starts_at desc')
     @events = @events.send(params[:team]) if params[:team]
     apply_filters
   end
