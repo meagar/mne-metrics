@@ -1,6 +1,8 @@
 
 class HeartbeatController < ApplicationController
 
+  skip_before_filter :require_user
+
   def index
     last_letter = NewsLetter.order(:id).last
     if Time.now.in_time_zone('EST').hour > 9

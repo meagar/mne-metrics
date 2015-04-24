@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'newrelic_rpm'
 gem 'haml'
 gem 'slim'
 gem 'rails_12factor', group: :production
